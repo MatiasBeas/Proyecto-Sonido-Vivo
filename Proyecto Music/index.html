@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Inicio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+
+    <!--CSS BOOTSRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--CSS ESTILOS (siempre al final)-->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estilos.css'>
+</head>
+
+<body>
+    <!--Barra de Navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Sonido Vivo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--CONTENIDO PRINCIPAL-->
+    <main>
+        <!--SECCION BIENVENIDA-->
+        <section class="hero py-5 px-4 px-lg-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-white">
+                        <h1 class="display-4 fw-bold mb-3">Instrumentos<br>Musicales y Accesorios</h1>
+                        <p class="lead mb-4" style="color: rgba(255,255,255,0.8);">
+                            Todo lo que necesitas para iniciar en el mundo de la música.
+                        </p>
+                        <a href="productos.html" class="btn btn-accent btn-lg rounded-pill px-4">Ver Productos</a>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <img src="https://images.unsplash.com/photo-1535587566541-97121a128dc5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z3VpdGFyfGVufDB8MHwwfHx8MA%3D%3D"
+                            class="img-fluid rounded-4 shadow-lg" alt="Instrumentos musicales">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--SECCION PRESENTACION DE LA TIENDA-->
+        <section class="py-5">
+            <div class="container">
+                <h6 class="text-center fw-bold" style="color: var(--acento); letter-spacing: 1px;">CATÁLOGO</h6>
+                <h2 class="text-center mb-5 fw-bold">Nuestros Productos</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9a9-2oGfSXR8yF1kc5dGH_ksXMEBuINK2H8W6OSMlRw&s=10"
+                                class="card-img-top" alt="Guitarra">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Guitarras</h5>
+                                <p class="card-text">Eléctricas y acústicas para todo nivel.</p>
+                                <a href="productos.html#guitarras" class="btn btn-accent">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://dojiw2m9tvv09.cloudfront.net/52889/product/X_mk7vkrt5cd-0010824.jpg?29&t=1786019916"
+                                class="card-img-top" alt="Batería">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Baterías</h5>
+                                <p class="card-text">Acústicas y electrónicas.</p>
+                                <a href="productos.html#baterias" class="btn btn-accent">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://cdn.awsli.com.br/2500x2500/1920/1920376/produto/257890120d169e072e2.jpg"
+                                class="card-img-top" alt="Amplificador">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Amplificadores</h5>
+                                <p class="card-text">Para práctica y ensayos en vivo.</p>
+                                <a href="productos.html#amplificadores" class="btn btn-accent">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Pie de pagina-->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SonidoVivo</h5>
+                    <p>Guitarras, Baterias, Amplificadores</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contacto</h5>
+                    <p class="mb-0">SonidoVivo@gmail.com</p>
+                    <p>Viña del Mar, Chile</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2026 SonidoVivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56912345678?text=Hola,%20quiero%20consultar%20por%20un%20producto" target="_blank"
+        class="btn btn-success rounded-circle shadow"
+        style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; z-index: 1000;">
+        💬
+    </a>
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

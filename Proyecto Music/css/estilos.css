@@ -1,0 +1,62 @@
+:root {
+    --acento: #C9327D;      /* magenta/rosa como en la referencia */
+    --acento-hover: #a5265f;
+    --oscuro: #1a1a2e;      /* azul-morado oscuro para el hero */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    color: #333333;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--oscuro) 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--oscuro) 0%, #16213e 100%);
+    min-height: calc(100vh - 56px); /* 56px es el alto típico del navbar de Bootstrap */
+    display: flex;
+    align-items: center;
+}
+
+.container1 {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.min-vh-60 {
+    min-height: 60vh;
+}
+
+.btn-accent {
+    background-color: var(--acento);
+    border-color: var(--acento);
+    color: white;
+}
+.btn-accent:hover {
+    background-color: var(--acento-hover);
+    border-color: var(--acento-hover);
+    color: white;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+}
+
+.navbar-custom {
+    background-color: var(--oscuro);
+}
+
