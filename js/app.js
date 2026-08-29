@@ -8,6 +8,7 @@
 const contenedor = document.querySelector("#contenedorProductos");
 const cantidad = document.querySelector("#cantidadProductos");
 
+
 // 5.3 Renderizar -----------------------------------------------------------
 function renderProductos(lista) {
     contenedor.innerHTML = "";
@@ -15,12 +16,12 @@ function renderProductos(lista) {
     lista.forEach(producto => {
         contenedor.innerHTML += `
             <div class="col-sm-6 col-lg-4">
-                <article class="card h-100 shadow-sm">
+                <article class="card card-producto h-100 shadow-sm">
                     <img src="${producto.imagen}"
                          class="card-img-top"
                          alt="${producto.nombre}">
                     <div class="card-body d-flex flex-column">
-                        <span class="badge text-bg-light align-self-start mb-2">
+                        <span class="badge badge-categoria align-self-start mb-2">
                             ${producto.categoria}
                         </span>
                         <h2 class="h5">${producto.nombre}</h2>
@@ -49,12 +50,13 @@ contenedor.addEventListener("click", event => {
         return;
     }
     const id = Number(event.target.dataset.id);
-    console.log("Agregar producto id:", id);
-    // Cuando lleguen al Módulo 6 (carrito), aquí van a llamar agregarAlCarrito(id)
+    agregarAlCarrito(id);
 });
 
 // PRUEBA TÚ 20-23 de la guía: filtro por categoría -------------------------
+// Filtro por categoría + búsqueda por texto ---------------------------------
 const selectCategoria = document.querySelector("#filtroCategoria");
+const inputBuscar = document.querySelector("#buscarProducto");
 
 if (selectCategoria) {
     // arma las opciones del <select> automáticamente a partir del catálogo
@@ -65,15 +67,30 @@ if (selectCategoria) {
         opcion.textContent = cat;
         selectCategoria.appendChild(opcion);
     });
+}
 
-    selectCategoria.addEventListener("change", () => {
-        const valor = selectCategoria.value;
-        if (valor === "todos") {
-            renderProductos(productos);
-        } else {
-            renderProductos(productos.filter(p => p.categoria === valor));
-        }
+function aplicarFiltros() {
+    const categoriaElegida = selectCategoria ? selectCategoria.value : "todos";
+    const texto = inputBuscar ? inputBuscar.value.trim().toLowerCase() : "";
+
+    const resultado = productos.filter(p => {
+        const coincideCategoria = categoriaElegida === "todos" || p.categoria === categoriaElegida;
+        const coincideTexto =
+            texto === "" ||
+            p.nombre.toLowerCase().includes(texto) ||
+            p.marca.toLowerCase().includes(texto);
+        return coincideCategoria && coincideTexto;
     });
+
+    renderProductos(resultado);
+}
+
+if (selectCategoria) {
+    selectCategoria.addEventListener("change", aplicarFiltros);
+}
+
+if (inputBuscar) {
+    inputBuscar.addEventListener("input", aplicarFiltros);
 }
 
 // Primer render al cargar la página

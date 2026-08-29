@@ -618,33 +618,6 @@ const productos = [
     }
 ];
 
-const contenedor = document.querySelector("#contenedorProductos");
-const cantidad = document.querySelector("#cantidadProductos");
-function renderProductos(lista) {
-    contenedor.innerHTML = "";
-    lista.forEach(producto => {
-        contenedor.innerHTML += `
-<div class="col-sm-6 col-lg-4">
-    <article class="card h-100 shadow-sm">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-            <div class="card-body d-flex flex-column">
-                <span class="badge text-bg-light align-self-start mb-2">
-                    ${producto.categoria}
-                </span>
-                <h2 class="h5">${producto.nombre}</h2>
-                    <p class="fs-5 fw-bold">$${producto.precio.toLocaleString("es-CL")}</p>
-                    <p>Stock: ${producto.stock}</p>
-                    <button class="btn btn-primary mt-auto btn-agregar"
-                        data-id="${producto.id}"
-                        ${producto.stock === 0 ? "disabled" : ""}>
-                        Agregar al carrito
-                    </button>
-            </div>      
-    </article>
-</div>`;
-    });
-    cantidad.textContent = `${lista.length} productos`;
-}
-renderProductos(productos);
+
 
 

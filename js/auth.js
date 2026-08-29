@@ -1,21 +1,32 @@
 // auth.js
 // Simulación de autenticación mientras no hay backend (Spring Boot) conectado.
 
+// ---- Login ----
 const formLogin = document.querySelector("#formLogin");
 
 if (formLogin) {
     formLogin.addEventListener("submit", event => {
-        event.preventDefault(); // evita que la página se recargue
+        event.preventDefault();
 
+        const loginError = document.querySelector("#loginError");
         const email = document.querySelector("#email").value.trim();
         const password = document.querySelector("#password").value;
 
         if (!email || !password) {
-            alert("Completa correo y contraseña.");
+            loginError.textContent = "Completa correo y contraseña.";
+            loginError.classList.remove("d-none");
             return;
         }
 
-        // Simulación de rol según el dominio del correo (temporal, sin backend real)
+        const usuarios = JSON.parse(localStorage.getItem("sonidoVivoUsuarios")) || [];
+        const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+        if (!usuario) {
+            loginError.textContent = "Correo o contraseña incorrectos.";
+            loginError.classList.remove("d-none");
+            return;
+        }
+
         let rol = "cliente";
         if (email.endsWith("@admin.com")) {
             rol = "administrador";
@@ -23,11 +34,59 @@ if (formLogin) {
             rol = "vendedor";
         }
 
-        const sesion = { email, rol };
+        const sesion = { email, nombre: usuario.nombre, rol };
         localStorage.setItem("sonidoVivoSesion", JSON.stringify(sesion));
 
-        alert(`Bienvenido/a. Rol detectado: ${rol}`);
+        alert(`Bienvenido/a, ${usuario.nombre}. Rol detectado: ${rol}`);
         window.location.href = "index.html";
+    });
+}
+
+// ---- Registro ----
+const formRegistro = document.querySelector("#formRegistro");
+
+if (formRegistro) {
+    formRegistro.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const registroError = document.querySelector("#registroError");
+        const nombre = document.querySelector("#nombre").value.trim();
+        const email = document.querySelector("#email").value.trim();
+        const password = document.querySelector("#password").value;
+        const confirmPassword = document.querySelector("#confirmPassword").value;
+
+        if (!nombre || !email || !password || !confirmPassword) {
+            registroError.textContent = "Completa todos los campos.";
+            registroError.classList.remove("d-none");
+            return;
+        }
+
+        if (password.length < 6) {
+            registroError.textContent = "La contraseña debe tener al menos 6 caracteres.";
+            registroError.classList.remove("d-none");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            registroError.textContent = "Las contraseñas no coinciden.";
+            registroError.classList.remove("d-none");
+            return;
+        }
+
+        const usuarios = JSON.parse(localStorage.getItem("sonidoVivoUsuarios")) || [];
+        const yaExiste = usuarios.some(u => u.email === email);
+
+        if (yaExiste) {
+            registroError.textContent = "Ya existe una cuenta con ese correo.";
+            registroError.classList.remove("d-none");
+            return;
+        }
+
+        usuarios.push({ nombre, email, password });
+        localStorage.setItem("sonidoVivoUsuarios", JSON.stringify(usuarios));
+
+        alert("Cuenta creada con éxito. Ahora inicia sesión.");
+        window.location.href = "login.html";
     });
 }
 
@@ -37,7 +96,6 @@ function actualizarNavbar() {
     const navUsuario = document.querySelector("#navUsuario");
     const navUsuarioEmail = document.querySelector("#navUsuarioEmail");
 
-    // Si esta página no tiene navbar con estos ids, no hace nada (por seguridad)
     if (!navInvitado || !navUsuario) return;
 
     const sesionGuardada = localStorage.getItem("sonidoVivoSesion");
@@ -64,5 +122,4 @@ if (btnCerrarSesion) {
     });
 }
 
-// Se ejecuta cada vez que carga cualquier página que incluya auth.js
 actualizarNavbar();
