@@ -60,3 +60,57 @@ body {
     background-color: var(--oscuro);
 }
 
+/* ---- Páginas de autenticación (login / registro) ---- */
+.auth-bg {
+    background: linear-gradient(135deg, var(--oscuro) 0%, #16213e 100%);
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card .brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--oscuro);
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.auth-card .btn-accent {
+    width: 100%;
+    padding: 0.65rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.auth-card .form-control {
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+}
+
+.auth-card .form-control:focus {
+    border-color: var(--acento);
+    box-shadow: 0 0 0 0.2rem rgba(201, 50, 125, 0.15);
+}
+
+.auth-switch a {
+    color: var(--acento);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
