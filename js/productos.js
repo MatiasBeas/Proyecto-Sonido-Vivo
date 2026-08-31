@@ -14,7 +14,8 @@ const productos = [
         "precio": 129990,
         "stock": 8,
         "descripcion": "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Acústicas"
+        "imagen": "https://www.dragg.cl/image/cache/data/productos/yamaha/F310-600x600.jpg"
+        
     },
     {
         "id": 2,
@@ -26,7 +27,7 @@ const productos = [
         "precio": 189990,
         "stock": 5,
         "descripcion": "Tapa de abeto macizo, brazo de caoba. Sonido cálido y proyectado.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Acústicas"
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/7198WAkPuUL.jpg"
     },
     {
         "id": 3,
@@ -38,7 +39,7 @@ const productos = [
         "precio": 89990,
         "stock": 10,
         "descripcion": "Nailon, tapa de abeto. Ideal para estudio y flamenco.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Acústicas"
+        "imagen": "https://cdnx.jumpseller.com/instruments/image/69260988/C40.webp?1783874307"
     },
     {
         "id": 4,
@@ -50,7 +51,7 @@ const productos = [
         "precio": 349990,
         "stock": 3,
         "descripcion": "Pickup integrado, afinador incorporado.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Acústicas"
+        "imagen": "https://rdmusico.cl/cdn/shop/files/180934-1200-auto.webp?v=1755969817"
     },
     {
         "id": 5,
@@ -62,7 +63,7 @@ const productos = [
         "precio": 79990,
         "stock": 6,
         "descripcion": "Tamaño reducido para niños de 6 a 10 años.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Acústicas"
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/6106LfreysL.jpg"
     },
     {
         "id": 6,
@@ -74,7 +75,7 @@ const productos = [
         "precio": 249990,
         "stock": 5,
         "descripcion": "Cuerpo de álamo, mástil de arce, pastillas SSS.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Eléctricas"
+        "imagen": "https://www.fender.cl/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/g/e/ge014_0310602506v1_4.jpg"
     },
     {
         "id": 7,
@@ -86,7 +87,7 @@ const productos = [
         "precio": 329990,
         "stock": 4,
         "descripcion": "Cuerpo caoba, tapa arce, pastillas humbucker.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Eléctricas"
+        "imagen": "https://audiomusicacl.vtexassets.com/arquivos/ids/212777-800-800?v=639208516903670000&width=800&height=800&aspect=true"
     },
     {
         "id": 8,
@@ -98,7 +99,7 @@ const productos = [
         "precio": 319990,
         "stock": 3,
         "descripcion": "Cuerpo caoba, mástil caoba, 2 humbuckers.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Eléctricas"
+        "imagen": "https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/3840x0/filters:quality(75)/prd-cl/product-medias/3908b463-ba9d-4c18-b688-144fa7c5408e/MK9D1X6DYX/MK9D1X6DYX-1/1712677098490-MK9D1X6DYX-1-0.jpg"
     },
     {
         "id": 9,
@@ -110,7 +111,7 @@ const productos = [
         "precio": 239990,
         "stock": 4,
         "descripcion": "Cuerpo álamo, clavijero vintage, 2 pastillas single.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Eléctricas"
+        "imagen": "https://audiomusicacl.vtexassets.com/arquivos/ids/191380/1-guitarra-electrica-fender-affinity-series-telecaster-butterscotch-blonde-1113323.jpg?v=638525238339100000"
     },
     {
         "id": 10,
@@ -122,7 +123,7 @@ const productos = [
         "precio": 549990,
         "stock": 2,
         "descripcion": "Semi-hueca, 2 humbuckers, ideal para jazz y blues.",
-        "imagen": "https://placehold.co/600x400?text=Guitarras+Eléctricas"
+        "imagen": "https://audiomusicacl.vtexassets.com/arquivos/ids/213227/1-es-335-figured-guitarra-electrica-de-caja-cherry-epiphone-1115907.jpg?v=639211278296670000"
     },
     {
         "id": 11,
@@ -134,7 +135,7 @@ const productos = [
         "precio": 299990,
         "stock": 5,
         "descripcion": "Pickup PJ, cuerpo álamo, mástil arce.",
-        "imagen": "https://placehold.co/600x400?text=Bajos+Eléctricos"
+        "imagen": "https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/3840x0/filters:quality(75)/prd-cl/product-medias/89390dc4-a26a-44c1-b37a-b4f2510f346c/MKF5R11IDP/MKF5R11IDP-1/1726173401216-MKF5R11IDP-1-0.jpg"
     },
     {
         "id": 12,
@@ -146,7 +147,7 @@ const productos = [
         "precio": 699990,
         "stock": 2,
         "descripcion": "Alder body, 2 Alnico V Jazz single-coil.",
-        "imagen": "https://placehold.co/600x400?text=Bajos+Eléctricos"
+        "imagen": "https://www.fender.cl/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/b/2/b222_0147373300v1.jpg"
     },
     {
         "id": 13,
@@ -158,7 +159,7 @@ const productos = [
         "precio": 429990,
         "stock": 2,
         "descripcion": "Electroacústico, afinador incorporado.",
-        "imagen": "https://placehold.co/600x400?text=Bajos+Eléctricos"
+        "imagen": "https://image.jimcdn.com/app/cms/image/transf/dimension=1820x1280:format=jpg/path/s5263068cafcfaace/image/i0249a2b673208cfc/version/1590211468/image.jpg"
     },
     {
         "id": 14,
@@ -170,7 +171,7 @@ const productos = [
         "precio": 599990,
         "stock": 2,
         "descripcion": "Incluye stands, platillos y pedal de bombo.",
-        "imagen": "https://placehold.co/600x400?text=Baterías"
+        "imagen": "https://biomusic.cl/wp-content/uploads/2022/11/bateria-pearl-roadshow-jet-black-rs525scc-31-D_NQ_NP_691555-MPE31254699226_062019-F.jpeg"
     },
     {
         "id": 15,
@@ -182,7 +183,7 @@ const productos = [
         "precio": 799990,
         "stock": 2,
         "descripcion": "Módulo TD-02, 8 pads de goma, pedal hi-hat.",
-        "imagen": "https://placehold.co/600x400?text=Baterías"
+        "imagen": "https://audiomusicacl.vtexassets.com/arquivos/ids/208393-800-800?v=639069303453170000&width=800&height=800&aspect=true"
     },
     {
         "id": 16,
@@ -194,7 +195,7 @@ const productos = [
         "precio": 89990,
         "stock": 4,
         "descripcion": "Acero, 14x5\", 10 tensores.",
-        "imagen": "https://placehold.co/600x400?text=Baterías"
+        "imagen": "https://www.ferreyra-music.cl/wp-content/uploads/2025/03/pearl-sensitone-heritage-alloy-sth1450s-steel-14-x-5-snare-drum.jpg"
     },
     {
         "id": 17,
@@ -206,7 +207,7 @@ const productos = [
         "precio": 149990,
         "stock": 3,
         "descripcion": "Latón B20, sonido brillante y claro.",
-        "imagen": "https://placehold.co/600x400?text=Baterías"
+        "imagen": "https://m.media-amazon.com/images/I/6129tuEifNL._AC_UF894,1000_QL80_.jpg"
     },
     {
         "id": 18,
@@ -218,7 +219,7 @@ const productos = [
         "precio": 129990,
         "stock": 3,
         "descripcion": "Latón B20, ataque rápido.",
-        "imagen": "https://placehold.co/600x400?text=Baterías"
+        "imagen": "https://rdmusico.cl/cdn/shop/files/71dGIJO--XL._AC_SX679.jpg?v=1728309200"
     },
     {
         "id": 19,
@@ -230,7 +231,7 @@ const productos = [
         "precio": 249990,
         "stock": 4,
         "descripcion": "61 teclas sensibles al tacto, 622 voces.",
-        "imagen": "https://placehold.co/600x400?text=Teclados+y+Pianos"
+        "imagen": "https://lacasadelmusico.cl/wp-content/uploads/2023/07/YAMAHAPSRE373.jpg"
     },
     {
         "id": 20,
@@ -242,7 +243,7 @@ const productos = [
         "precio": 499990,
         "stock": 2,
         "descripcion": "88 teclas pesadas, 10 voces, pedal sustain incluido.",
-        "imagen": "https://placehold.co/600x400?text=Teclados+y+Pianos"
+        "imagen": "https://www.ebest.cl/media/catalog/product/cache/0bc616ffa3bfc568569088285176d789/1/4/1422272156_1114058.jpg"
     },
     {
         "id": 21,
@@ -254,7 +255,7 @@ const productos = [
         "precio": 129990,
         "stock": 5,
         "descripcion": "MIDI controller, 49 mini teclas.",
-        "imagen": "https://placehold.co/600x400?text=Teclados+y+Pianos"
+        "imagen": "https://abregoaudio.cl/media/imgproductos/KEYLAB49MKII.jpg"
     },
     {
         "id": 22,
@@ -266,7 +267,7 @@ const productos = [
         "precio": 399990,
         "stock": 2,
         "descripcion": "88 teclas martillo, sin sonidos propios.",
-        "imagen": "https://placehold.co/600x400?text=Teclados+y+Pianos"
+        "imagen": "https://cdnx.jumpseller.com/colque-audio-pro/image/57657366/standard_resolution.jpg?1732713575"
     },
     {
         "id": 23,
@@ -278,7 +279,7 @@ const productos = [
         "precio": 99990,
         "stock": 5,
         "descripcion": "15W, distorsión incorporada, entrada auxiliar.",
-        "imagen": "https://placehold.co/600x400?text=Amplificadores"
+        "imagen": "https://static.wixstatic.com/media/3a406c_8c3ae6a98d7f4790a7eee3102d59e9d2~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
     },
     {
         "id": 24,
@@ -290,7 +291,7 @@ const productos = [
         "precio": 299990,
         "stock": 3,
         "descripcion": "40W, 4 canales, efectos digitales integrados.",
-        "imagen": "https://placehold.co/600x400?text=Amplificadores"
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_992306-MLC82318772759_022025-O-amplificador-guitarra-tubo-40w-envio-gratis-dsl40-marshall.webp"
     },
     {
         "id": 25,
@@ -302,7 +303,7 @@ const productos = [
         "precio": 449990,
         "stock": 2,
         "descripcion": "100W, tweeter integrado, ecualizador de 4 bandas.",
-        "imagen": "https://placehold.co/600x400?text=Amplificadores"
+        "imagen": "https://ik.imagekit.io/616tpia3u/A100.jpg?tr=w-1024,f-jpeg"
     },
     {
         "id": 26,
@@ -314,7 +315,7 @@ const productos = [
         "precio": 499990,
         "stock": 2,
         "descripcion": "60W, 2 canales, reverb y chorus incorporados.",
-        "imagen": "https://placehold.co/600x400?text=Amplificadores"
+        "imagen": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/1e227444-3d7c-42bc-a741-62f98801923e.__CR0,0,800,600_PT0_SX600_V1___.png"
     },
     {
         "id": 27,
@@ -326,7 +327,7 @@ const productos = [
         "precio": 149990,
         "stock": 8,
         "descripcion": "Estándar industria para voz en vivo.",
-        "imagen": "https://placehold.co/600x400?text=Micrófonos"
+        "imagen": "https://promusic.cl/cdn/shop/files/SM58_1_44b8ad33-f884-4cc6-9b03-ecfc914e59fb.jpg?crop=center&height=1024&v=1767620327&width=1024"
     },
     {
         "id": 28,
@@ -338,7 +339,7 @@ const productos = [
         "precio": 139990,
         "stock": 6,
         "descripcion": "Ideal para captura de instrumentos y amplificadores.",
-        "imagen": "https://placehold.co/600x400?text=Micrófonos"
+        "imagen": "https://promusic.cl/cdn/shop/files/SM57_2_b22e3862-2138-4cf8-a70e-66418fff9a29.jpg?v=1765564417&width=2000"
     },
     {
         "id": 29,
@@ -350,7 +351,7 @@ const productos = [
         "precio": 199990,
         "stock": 4,
         "descripcion": "Cardioide, XLR, ideal para grabación en estudio.",
-        "imagen": "https://placehold.co/600x400?text=Micrófonos"
+        "imagen": "https://audiofans.cl/wp-content/uploads/2020/04/2-17.jpg"
     },
     {
         "id": 30,
@@ -362,7 +363,7 @@ const productos = [
         "precio": 299990,
         "stock": 5,
         "descripcion": "USB, 4 patrones polares, ideal para streaming y podcast.",
-        "imagen": "https://placehold.co/600x400?text=Micrófonos"
+        "imagen": "https://kyrios.cl/cdn/shop/files/MCP9540L.jpg?v=1718652274"
     },
     {
         "id": 31,
@@ -374,7 +375,7 @@ const productos = [
         "precio": 79990,
         "stock": 7,
         "descripcion": "Clásico pedal de distorsión, 3 controles.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://www.blupointmusic.cl/wp-content/uploads/2023/05/BOSS-DS1-1.jpg"
     },
     {
         "id": 32,
@@ -386,7 +387,7 @@ const productos = [
         "precio": 179990,
         "stock": 4,
         "descripcion": "8 modos de reverb, control de shimmer.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/3840x0/filters:quality(75)/prd-cl/product-medias/7735d94e-be1b-4eb9-8eaf-c543e9a9b488/MK2JIK1UUZ/MK2JIK1UUZ-1/1759256065576-MK2JIK1UUZ-1-0.jpg"
     },
     {
         "id": 33,
@@ -398,7 +399,7 @@ const productos = [
         "precio": 349990,
         "stock": 2,
         "descripcion": "Diseño tipo pedalboard, 8 efectos simultáneos.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://media.spdigital.cl/thumbnails/products/56d1fkoy_b779b546_thumbnail_4096.jpg"
     },
     {
         "id": 34,
@@ -410,7 +411,7 @@ const productos = [
         "precio": 89990,
         "stock": 8,
         "descripcion": "Afinador cromático, indicador de tono.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://armonicos.cl/5434-thickbox_default/boss-tu-3-chromatic-floor-tuner.jpg"
     },
     {
         "id": 35,
@@ -422,7 +423,7 @@ const productos = [
         "precio": 179990,
         "stock": 4,
         "descripcion": "Delay analógico cálido, tiempo 600ms.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://armonicos.cl/4408-thickbox_default/mxr-carbon-copy-analog-delay.jpg"
     },
     {
         "id": 36,
@@ -434,7 +435,7 @@ const productos = [
         "precio": 99990,
         "stock": 6,
         "descripcion": "Tube Screamer clásico, sonido suave y orgánico.",
-        "imagen": "https://placehold.co/600x400?text=Pedales+de+Efectos"
+        "imagen": "https://foreign.cl/wp-content/uploads/2023/11/ts9_1_2.webp"
     },
     {
         "id": 37,
@@ -446,7 +447,7 @@ const productos = [
         "precio": 8990,
         "stock": 25,
         "descripcion": "Juego 6 cuerdas, calibre ligero.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://cdnx.jumpseller.com/musicchile/image/57538291/f836113f-78e6-4e5d-98ef-5c0e3c88fb58-open-uri20220519-2507-p3b4ds.png?1755894767"
     },
     {
         "id": 38,
@@ -458,7 +459,7 @@ const productos = [
         "precio": 10990,
         "stock": 20,
         "descripcion": "Bronce fósforo, sonido cálido.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_994013-MLC43908718658_102020-O.webp"
     },
     {
         "id": 39,
@@ -470,7 +471,7 @@ const productos = [
         "precio": 14990,
         "stock": 12,
         "descripcion": "Cuerdas de níquel enrollado, set 4 cuerdas.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://cdnx.jumpseller.com/rosenbrauns-store/image/47731527/D_832790-MLC72035084177_092023-O.jpg?1716302559"
     },
     {
         "id": 40,
@@ -482,7 +483,7 @@ const productos = [
         "precio": 3990,
         "stock": 50,
         "descripcion": "Celulosa, grosor medio.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://http2.mlstatic.com/D_964504-MLA78733862381_082024-O.jpg"
     },
     {
         "id": 41,
@@ -494,7 +495,7 @@ const productos = [
         "precio": 12990,
         "stock": 15,
         "descripcion": "Capotraste de resorte, compatible 6 cuerdas.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://factorysound.cl/33120-large_default/DU-83CB.jpg"
     },
     {
         "id": 42,
@@ -506,7 +507,7 @@ const productos = [
         "precio": 8990,
         "stock": 20,
         "descripcion": "Afinador cromático de clip, pantalla giratoria.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://i.ebayimg.com/images/g/yOgAAOSwF3RjuMC6/s-l1200.jpg"
     },
     {
         "id": 43,
@@ -518,7 +519,7 @@ const productos = [
         "precio": 12990,
         "stock": 15,
         "descripcion": "Cable trenzado, conectores dorados, 3 metros.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://japan.jrrshop.com/media/catalog/product/cache/4/small_image/600x600/a9170bbe7f8f7875705a4cc1234a04b5/m/o/monsters100.jpg"
     },
     {
         "id": 44,
@@ -530,7 +531,7 @@ const productos = [
         "precio": 17990,
         "stock": 10,
         "descripcion": "Cable trenzado, conectores dorados, 6 metros.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe_8ZAjVWvc3wCMT8kau3Vc9cNLuQuH9T0mPcobu7AJPSkDWdo6v07VxM&s=10"
     },
     {
         "id": 45,
@@ -542,7 +543,7 @@ const productos = [
         "precio": 22990,
         "stock": 12,
         "descripcion": "Soporte plegable con enganche automático.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://factorysound.cl/44840-large_default/hercules-gs302b-atril-guitarra-electrica-bajo-travlite.jpg"
     },
     {
         "id": 46,
@@ -554,7 +555,7 @@ const productos = [
         "precio": 18990,
         "stock": 10,
         "descripcion": "Montaje a pared, enganche automático.",
-        "imagen": "https://placehold.co/600x400?text=Accesorios"
+        "imagen": "https://m.media-amazon.com/images/I/71JduClA2GL.jpg"
     },
     {
         "id": 47,
@@ -566,7 +567,7 @@ const productos = [
         "precio": 149990,
         "stock": 4,
         "descripcion": "1 entrada XLR+instrumento, 2 salidas, 24bit/192kHz.",
-        "imagen": "https://placehold.co/600x400?text=Estudio+y+Grabación"
+        "imagen": "https://maneimport.com/wp-content/uploads/2021/10/Scarlett-Solo-1.jpg"
     },
     {
         "id": 48,
@@ -578,7 +579,7 @@ const productos = [
         "precio": 79990,
         "stock": 6,
         "descripcion": "Circumaurales, respuesta 15Hz-20kHz.",
-        "imagen": "https://placehold.co/600x400?text=Estudio+y+Grabación"
+        "imagen": "https://emmett.cl/cdn/shop/files/b358df5e-bbf5-493d-9801-a63cefe53fe6.jpg?v=1739388129"
     },
     {
         "id": 49,
@@ -590,7 +591,7 @@ const productos = [
         "precio": 219990,
         "stock": 4,
         "descripcion": "Referencia de industria, sonido neutro y detallado.",
-        "imagen": "https://placehold.co/600x400?text=Estudio+y+Grabación"
+        "imagen": "https://www.blupointmusic.cl/wp-content/uploads/2020/12/ath-m50x_01.png"
     },
     {
         "id": 50,
@@ -602,7 +603,7 @@ const productos = [
         "precio": 349990,
         "stock": 2,
         "descripcion": "Altavoz activo, respuesta plana, ideal mezcla.",
-        "imagen": "https://placehold.co/600x400?text=Estudio+y+Grabación"
+        "imagen": "https://cdnx.jumpseller.com/instruments/image/71160854/HS5_20LN.png?1766964868"
     },
     {
         "id": 51,
@@ -614,7 +615,7 @@ const productos = [
         "precio": 14990,
         "stock": 8,
         "descripcion": "Doble malla, brazo flexible con clip.",
-        "imagen": "https://placehold.co/600x400?text=Estudio+y+Grabación"
+        "imagen": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_13/139339/10880962_800.jpg"
     }
 ];
 
