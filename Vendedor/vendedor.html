@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Panel de Vendedor</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+    <!--CSS BOOTSRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--CSS ESTILOS-->
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/estilos.css'>
+</head>
+
+<body>
+    <!--Barra de Navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="vendedor.html">Sonido Vivo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="vendedor.html">Stock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pedidos</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-lg-auto align-items-lg-center">
+                    <li class="nav-item dropdown mt-2 mt-lg-0">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            <span id="navUsuarioEmail"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" id="btnCerrarSesion">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--CONTENIDO PRINCIPAL-->
+    <main class="container py-5">
+        <h1 class="h3 mb-4">Panel de Vendedor</h1>
+
+        <div class="seccion-card">
+            <h5 class="mb-3">Actualizar stock de productos</h5>
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Marca</th>
+                            <th>Precio</th>
+                            <th>Stock actual</th>
+                            <th>Nuevo stock</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaStock"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- IMPORTANTE: el orden importa. productos.js primero, luego carrito.js, luego app.js -->
+    <script src="../js/productos.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/app.js"></script>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col md-6">
+                    <h5>SonidoVivo</h5>
+                    <p>Guitarras, Baterias, Amplificadores</p>
+                </div>
+                <div class="col md-6 text-md-end">
+                    <h5>Contacto</h5>
+                    <p class="mb-0">SonidoVivo@gmail.com</p>
+                    <p>Viña del Mar, Chile</p>
+                </div>
+                <hr>
+                <p class="text-center">&copy; 2026 SonidoVivo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+    <script src="../js/stock.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/proteccion.js"></script>
+    <script>
+        protegerPagina("vendedor");
+    </script>
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

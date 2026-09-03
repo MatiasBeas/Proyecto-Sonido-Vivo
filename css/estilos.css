@@ -150,3 +150,39 @@ body {
     padding: 0.5rem 0.9rem;
     border-radius: 50px;
 }
+
+/* ---- Footer pegado al fondo ---- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > main {
+    flex: 1;
+}
+
+/* ---- Encabezado de página interior (ej. Contacto) ---- */
+.page-header {
+    background: linear-gradient(135deg, var(--oscuro) 0%, #16213e 100%);
+    color: #ffffff;
+    padding: 2.5rem 0;
+    margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0;
+}
+
+/* ---- Tarjeta contenedora (ej. mapa, secciones destacadas) ---- */
+.seccion-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}

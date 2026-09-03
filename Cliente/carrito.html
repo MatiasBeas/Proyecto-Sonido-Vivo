@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Iniciar Sesión</title>
+    <title>Carrito de Compras</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 
@@ -14,7 +14,6 @@
 
     <!--CSS ESTILOS-->
     <link rel='stylesheet' type='text/css' media='screen' href='../css/estilos.css'>
-
 </head>
 
 <body>
@@ -40,7 +39,7 @@
                 </ul>
                 <ul class="navbar-nav ms-lg-auto align-items-lg-center">
                     <li class="nav-item mt-2 mt-lg-0 me-lg-3">
-                        <a class="nav-link text-white position-relative" href="carrito.html" id="iconoCarrito">
+                        <a class="nav-link text-white position-relative" href="#" id="iconoCarrito">
                             🛒
                             <span id="contadorCarrito" class="badge rounded-pill d-none"
                                 style="position: absolute; top: 0; right: -8px; background-color: var(--acento); font-size: 0.65rem;">
@@ -74,42 +73,25 @@
     </nav>
 
     <!--CONTENIDO PRINCIPAL-->
-    <main class="auth-bg">
-        <div class="auth-card">
-            <div id="avisoLogin" class="alert alert-warning py-2 small d-none" role="alert">
-                Debes iniciar sesión o registrarte para continuar con tu pedido.
-            </div>
-            <div class="brand">Sonido Vivo</div>
+    <main class="container py-5">
+        <h1 class="h3 mb-4">Tu carrito</h1>
 
-            <form id="formLogin">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
+        <!-- Mensaje cuando el carrito está vacío -->
+        <div id="carritoVacio" class="text-center text-muted py-5 d-none">
+            <p class="mb-3">Aún no has agregado productos a tu carrito.</p>
+            <a href="productos.html" class="btn btn-accent">Ver catálogo</a>
+        </div>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" required>
-                </div>
+        <!-- Lista de productos del carrito -->
+        <div id="listaCarrito"></div>
 
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="recordarme">
-                    <label class="form-check-label" for="recordarme">Recordarme</label>
-                </div>
-
-                <div id="loginError" class="alert alert-danger py-2 small d-none" role="alert"></div>
-
-                <button type="submit" class="btn btn-accent">Iniciar sesión</button>
-            </form>
-
-            <p class="text-center mt-3 auth-switch">
-                ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
-            </p>
-
+        <!-- Resumen del total -->
+        <div id="resumenCarrito" class="d-none border-top pt-4 mt-4 d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Total: <span id="totalCarrito">$0</span></h4>
+            <button class="btn btn-accent" id="btnConfirmarPedido">Confirmar pedido</button>
         </div>
     </main>
 
-    <!--Pie de pagina-->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
@@ -128,16 +110,19 @@
         </div>
     </footer>
 
+    <!--Productos-->
+    <script src="../js/productos.js"></script>
     <!--Carrito-->
     <script src="../js/carrito.js"></script>
 
-    <!--Script para autenticación-->
+    <!--Auth-->
     <script src="../js/auth.js"></script>
 
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

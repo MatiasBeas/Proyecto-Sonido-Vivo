@@ -14,6 +14,8 @@ function renderProductos(lista) {
     contenedor.innerHTML = "";
 
     lista.forEach(producto => {
+        const stockActual = obtenerStockActual(producto);
+
         contenedor.innerHTML += `
             <div class="col-sm-6 col-lg-4">
                 <article class="card card-producto h-100 shadow-sm">
@@ -28,12 +30,12 @@ function renderProductos(lista) {
                         <p class="text-muted mb-1">${producto.marca} — ${producto.modelo}</p>
                         <p class="small flex-grow-1">${producto.descripcion}</p>
                         <p class="fs-5 fw-bold mb-1">$${producto.precio.toLocaleString("es-CL")}</p>
-                        <p class="small ${producto.stock === 0 ? "text-danger" : "text-success"}">
-                            ${producto.stock === 0 ? "Sin stock" : "Stock: " + producto.stock}
+                        <p class="small ${stockActual === 0 ? "text-danger" : "text-success"}">
+                            ${stockActual === 0 ? "Sin stock" : "Stock: " + stockActual}
                         </p>
                         <button class="btn btn-accent mt-auto btn-agregar"
                                 data-id="${producto.id}"
-                                ${producto.stock === 0 ? "disabled" : ""}>
+                                ${stockActual === 0 ? "disabled" : ""}>
                             Agregar al carrito
                         </button>
                     </div>

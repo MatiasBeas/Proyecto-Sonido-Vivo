@@ -38,7 +38,23 @@ if (formLogin) {
         localStorage.setItem("sonidoVivoSesion", JSON.stringify(sesion));
 
         alert(`Bienvenido/a, ${usuario.nombre}. Rol detectado: ${rol}`);
-        window.location.href = "index.html";
+
+        // Prioridad 1: si venía de un lugar específico (como el checkout), lo devuelve ahí
+        const destino = localStorage.getItem("sonidoVivoRedirect");
+        if (destino) {
+            localStorage.removeItem("sonidoVivoRedirect");
+            window.location.href = destino;
+            return;
+        }
+
+        // Prioridad 2: si no venía de ningún lado en particular, lo manda según su rol
+        if (rol === "vendedor") {
+            window.location.href = "../Vendedor/vendedor.html";
+        } else if (rol === "administrador") {
+            window.location.href = "../Admin/admin.html";
+        } else {
+            window.location.href = "index.html";
+        }
     });
 }
 
@@ -118,8 +134,25 @@ if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", event => {
         event.preventDefault();
         localStorage.removeItem("sonidoVivoSesion");
-        window.location.href = "index.html";
+
+        // Si ya estamos dentro de Cliente/, index.html está en la misma carpeta.
+        // Si estamos en Vendedor/ o Admin/, hay que salir y entrar a Cliente/.
+        const enCliente = window.location.pathname.includes("/Cliente/");
+        window.location.href = enCliente ? "index.html" : "../Cliente/index.html";
     });
 }
 
 actualizarNavbar();
+
+// ---- Aviso si venía redirigido desde otra parte (ej. checkout) ----
+function mostrarAvisoRedireccion() {
+    const avisoLogin = document.querySelector("#avisoLogin");
+    if (!avisoLogin) return;
+
+    const destino = localStorage.getItem("sonidoVivoRedirect");
+    if (destino) {
+        avisoLogin.classList.remove("d-none");
+    }
+}
+
+mostrarAvisoRedireccion();
