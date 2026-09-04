@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Carrito de Compras</title>
+    <title>Panel de Pedidos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 
@@ -20,7 +20,7 @@
     <!--Barra de Navegacion-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Sonido Vivo</a>
+            <a class="navbar-brand" href="vendedor.html">Sonido Vivo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,43 +28,19 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link" href="vendedor.html">Stock</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="productos.html">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link active" aria-current="page" href="pedidos.html">Pedidos</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-lg-auto align-items-lg-center">
-                    <li class="nav-item mt-2 mt-lg-0 me-lg-3">
-                        <a class="nav-link text-white position-relative" href="#" id="iconoCarrito">
-                            🛒
-                            <span id="contadorCarrito" class="badge rounded-pill d-none"
-                                style="position: absolute; top: 0; right: -8px; background-color: var(--acento); font-size: 0.65rem;">
-                                0
-                            </span>
-                        </a>
-                    </li>
-                    <!-- Estado: invitado (sin sesión) -->
-                    <li class="nav-item mt-2 mt-lg-0" id="navInvitado">
-                        <a class="btn btn-outline-light btn-sm rounded-pill px-3 me-lg-2" href="login.html">Iniciar
-                            sesión</a>
-                        <a class="btn btn-accent btn-sm rounded-pill px-3" href="registro.html">Registrarse</a>
-                    </li>
 
-                    <!-- Estado: con sesión iniciada (oculto por defecto) -->
-                    <li class="nav-item dropdown mt-2 mt-lg-0 d-none" id="navUsuario">
+                <ul class="navbar-nav ms-lg-auto align-items-lg-center">
+                    <li class="nav-item dropdown mt-2 mt-lg-0">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
                             <span id="navUsuarioEmail"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="pedidos.html">Mis pedidos</a></li>
-                            <li><a class="dropdown-item" href="perfil.html">Mi perfil</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li><a class="dropdown-item" href="#" id="btnCerrarSesion">Cerrar sesión</a></li>
                         </ul>
                     </li>
@@ -74,24 +50,42 @@
     </nav>
 
     <!--CONTENIDO PRINCIPAL-->
-    <main class="container py-5">
-        <h1 class="h3 mb-4">Tu carrito</h1>
-
-        <!-- Mensaje cuando el carrito está vacío -->
-        <div id="carritoVacio" class="text-center text-muted py-5 d-none">
-            <p class="mb-3">Aún no has agregado productos a tu carrito.</p>
-            <a href="productos.html" class="btn btn-accent">Ver catálogo</a>
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1 class="h3">Pedidos</h1>
+                <p>Revisa y actualiza el estado de los pedidos de los clientes.</p>
+            </div>
         </div>
 
-        <!-- Lista de productos del carrito -->
-        <div id="listaCarrito"></div>
-
-        <!-- Resumen del total -->
-        <div id="resumenCarrito" class="d-none border-top pt-4 mt-4 d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Total: <span id="totalCarrito">$0</span></h4>
-            <button class="btn btn-accent" id="btnConfirmarPedido">Confirmar pedido</button>
+        <div class="container pb-5">
+            <div class="seccion-card">
+                <div id="sinPedidos" class="text-center text-muted py-4 d-none">
+                    Aún no hay pedidos registrados.
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>N° Pedido</th>
+                                <th>Cliente</th>
+                                <th>Productos</th>
+                                <th>Total</th>
+                                <th>Entrega</th>
+                                <th>Pago</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaPedidos"></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
+    <!-- IMPORTANTE: el orden importa. productos.js primero, luego carrito.js, luego app.js -->
+    <script src="../js/productos.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/app.js"></script>
 
     <footer class="bg-dark text-white py-4">
         <div class="container">
@@ -111,13 +105,13 @@
         </div>
     </footer>
 
-    <!--Productos-->
     <script src="../js/productos.js"></script>
-    <!--Carrito-->
-    <script src="../js/carrito.js"></script>
-
-    <!--Auth-->
+    <script src="../js/pedidos.js"></script>
     <script src="../js/auth.js"></script>
+    <script src="../js/proteccion.js"></script>
+    <script>
+        protegerPagina("vendedor");
+    </script>
 
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

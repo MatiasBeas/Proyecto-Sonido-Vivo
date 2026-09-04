@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Panel de Vendedor</title>
+    <title>Panel de Administrador</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 
@@ -20,7 +20,7 @@
     <!--Barra de Navegacion-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="vendedor.html">Sonido Vivo</a>
+            <a class="navbar-brand" href="admin.html">Sonido Vivo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="vendedor.html">Stock</a>
+                        <a class="nav-link active" aria-current="page" href="admin.html">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pedidos.html">Pedidos</a>
+                        <a class="nav-link" href="productos-admin.html">Productos</a>
                     </li>
                 </ul>
 
@@ -50,30 +50,30 @@
     </nav>
 
     <!--CONTENIDO PRINCIPAL-->
+    <!--CONTENIDO PRINCIPAL-->
     <main>
         <div class="page-header">
             <div class="container">
-                <h1 class="h3">Panel de Vendedor</h1>
-                <p>Gestiona el stock de los productos del catálogo.</p>
+                <h1 class="h3">Panel de Administrador</h1>
+                <p>Gestiona los usuarios registrados en el sistema.</p>
             </div>
         </div>
 
         <div class="container pb-5">
             <div class="seccion-card">
-                <h5 class="mb-3">Actualizar stock de productos</h5>
+                <h5 class="mb-3">Usuarios registrados</h5>
                 <div class="table-responsive">
                     <table class="table align-middle">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Marca</th>
-                                <th>Precio</th>
-                                <th>Stock actual</th>
-                                <th>Nuevo stock</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody id="tablaStock"></tbody>
+                        <tbody id="tablaUsuarios"></tbody>
                     </table>
                 </div>
             </div>
@@ -102,12 +102,11 @@
         </div>
     </footer>
 
-    <script src="../js/productos.js"></script>
-    <script src="../js/stock.js"></script>
+    <script src="../js/usuarios.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../js/proteccion.js"></script>
     <script>
-        protegerPagina("vendedor");
+        protegerPagina("administrador");
     </script>
 
     <!--Bootstrap-->

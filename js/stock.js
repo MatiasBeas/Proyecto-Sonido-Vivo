@@ -1,6 +1,4 @@
-// stock.js
-// Maneja el stock editable del panel de vendedor.
-// Guarda los cambios en localStorage, separados del arreglo original de productos.js.
+
 
 function obtenerOverridesStock() {
     return JSON.parse(localStorage.getItem("sonidoVivoStock")) || {};
@@ -26,12 +24,19 @@ function renderTablaStock() {
     productos.forEach(producto => {
         const stockActual = obtenerStockActual(producto);
 
+        let claseStock = "stock-ok";
+        if (stockActual === 0) {
+            claseStock = "stock-agotado";
+        } else if (stockActual <= 5) {
+            claseStock = "stock-bajo";
+        }
+
         tbody.innerHTML += `
         <tr>
             <td>${producto.nombre}</td>
             <td>${producto.marca}</td>
             <td>$${producto.precio.toLocaleString("es-CL")}</td>
-            <td>${stockActual}</td>
+            <td class="${claseStock}">${stockActual}</td>
             <td>
                 <input type="number" min="0" value="${stockActual}"
                        class="form-control form-control-sm input-nuevo-stock"

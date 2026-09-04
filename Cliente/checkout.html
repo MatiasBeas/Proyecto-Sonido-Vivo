@@ -60,7 +60,8 @@
                             <span id="navUsuarioEmail"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                            <li><a class="dropdown-item" href="pedidos.html">Mis pedidos</a></li>
+                            <li><a class="dropdown-item" href="perfil.html">Mi perfil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -122,6 +123,29 @@
                         <input class="form-check-input" type="radio" name="pago" id="pagoTarjeta" value="tarjeta">
                         <label class="form-check-label" for="pagoTarjeta">Tarjeta de crédito/débito (Webpay)</label>
                     </div>
+
+                    <div id="bloqueTarjeta" class="seccion-card mt-3 mb-3 d-none">
+                        <div class="mb-3">
+                            <label for="numeroTarjeta" class="form-label small">Número de tarjeta</label>
+                            <input type="text" class="form-control" id="numeroTarjeta" placeholder="1111 1111 1111 1111"
+                                maxlength="19">
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label for="vencimientoTarjeta" class="form-label small">Vencimiento (MM/AA)</label>
+                                <input type="text" class="form-control" id="vencimientoTarjeta" placeholder="MM/AA"
+                                    maxlength="5">
+                            </div>
+                            <div class="col-6">
+                                <label for="cvvTarjeta" class="form-label small">CVV</label>
+                                <input type="text" class="form-control" id="cvvTarjeta" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="form-text mt-2">
+                            Datos de prueba: N° 4111 1111 1111 1111 · Vencimiento 12/28 · CVV 123
+                        </div>
+                    </div>
+
                     <div class="form-check" id="opcionPagoTienda">
                         <input class="form-check-input" type="radio" name="pago" id="pagoTienda" value="tienda">
                         <label class="form-check-label" for="pagoTienda">Pago en tienda al retirar</label>
@@ -198,7 +222,7 @@
     <script src="../js/productos.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="../js/checkout.js"></script>
-    
+
     <!--Script para autenticación-->
     <script src="../js/auth.js"></script>
 

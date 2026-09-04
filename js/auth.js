@@ -26,12 +26,21 @@ if (formLogin) {
             loginError.classList.remove("d-none");
             return;
         }
+        if (usuario.activo === false) {
+            loginError.textContent = "Tu cuenta ha sido desactivada. Contacta al administrador.";
+            loginError.classList.remove("d-none");
+            return;
+        }
 
-        let rol = "cliente";
-        if (email.endsWith("@admin.com")) {
-            rol = "administrador";
-        } else if (email.endsWith("@vendedor.com")) {
-            rol = "vendedor";
+        let rol = usuario.rol;
+        if (!rol) {
+            // Respaldo para cuentas de prueba creadas antes de este cambio
+            rol = "cliente";
+            if (email.endsWith("@admin.com")) {
+                rol = "administrador";
+            } else if (email.endsWith("@vendedor.com")) {
+                rol = "vendedor";
+            }
         }
 
         const sesion = { email, nombre: usuario.nombre, rol };
@@ -98,7 +107,14 @@ if (formRegistro) {
             return;
         }
 
-        usuarios.push({ nombre, email, password });
+        let rolNuevo = "cliente";
+        if (email.endsWith("@admin.com")) {
+            rolNuevo = "administrador";
+        } else if (email.endsWith("@vendedor.com")) {
+            rolNuevo = "vendedor";
+        }
+
+        usuarios.push({ nombre, email, password, rol: rolNuevo });
         localStorage.setItem("sonidoVivoUsuarios", JSON.stringify(usuarios));
 
         alert("Cuenta creada con éxito. Ahora inicia sesión.");

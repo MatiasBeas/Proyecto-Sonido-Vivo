@@ -33,6 +33,62 @@ if (radiosEntrega.length > 0) {
     actualizarSegunEntrega();
 }
 
+// ---- Mostrar/ocultar campos de tarjeta ----
+const radiosPago = document.querySelectorAll('input[name="pago"]');
+const bloqueTarjeta = document.querySelector("#bloqueTarjeta");
+
+function actualizarSegunPago() {
+    const pagoElegido = document.querySelector('input[name="pago"]:checked').value;
+
+    if (pagoElegido === "tarjeta") {
+        bloqueTarjeta.classList.remove("d-none");
+    } else {
+        bloqueTarjeta.classList.add("d-none");
+    }
+}
+
+if (radiosPago.length > 0) {
+    radiosPago.forEach(radio => {
+        radio.addEventListener("change", actualizarSegunPago);
+    });
+    actualizarSegunPago();
+}
+if (radiosPago.length > 0) {
+    radiosPago.forEach(radio => {
+        radio.addEventListener("change", actualizarSegunPago);
+    });
+    actualizarSegunPago();
+}
+
+// ---- Auto-formato de campos de tarjeta ----
+const numeroTarjetaInput = document.querySelector("#numeroTarjeta");
+const vencimientoInput = document.querySelector("#vencimientoTarjeta");
+const cvvInput = document.querySelector("#cvvTarjeta");
+
+if (numeroTarjetaInput) {
+    numeroTarjetaInput.addEventListener("input", () => {
+        let valor = numeroTarjetaInput.value.replace(/\D/g, "").slice(0, 16);
+        valor = valor.replace(/(.{4})/g, "$1 ").trim();
+        numeroTarjetaInput.value = valor;
+    });
+}
+
+if (vencimientoInput) {
+    vencimientoInput.addEventListener("input", () => {
+        let valor = vencimientoInput.value.replace(/\D/g, "").slice(0, 4);
+        if (valor.length > 2) {
+            valor = valor.slice(0, 2) + "/" + valor.slice(2);
+        }
+        vencimientoInput.value = valor;
+    });
+}
+
+if (cvvInput) {
+    cvvInput.addEventListener("input", () => {
+        cvvInput.value = cvvInput.value.replace(/\D/g, "").slice(0, 3);
+    });
+}
+
 // ---- Resumen del pedido ----
 let cuponAplicado = false;
 const CODIGO_CUPON = "SONIDO10";
@@ -145,11 +201,98 @@ if (formCheckout) {
                 return;
             }
         }
+        const pagoElegido = document.querySelector('input[name="pago"]:checked').value;
+        const NUMERO_TARJETA_VALIDO = "4111111111111111";
+        const VENCIMIENTO_VALIDO = "12/28";
+        const CVV_VALIDO = "123";
+
+        if (pagoElegido === "tarjeta") {
+            const numeroIngresado = document.querySelector("#numeroTarjeta").value.replace(/\s/g, "");
+            const vencimientoIngresado = document.querySelector("#vencimientoTarjeta").value;
+            const cvvIngresado = document.querySelector("#cvvTarjeta").value;
+
+            if (numeroIngresado.length !== 16 || vencimientoIngresado.length !== 5 || cvvIngresado.length !== 3) {
+                checkoutError.textContent = "Completa todos los datos de la tarjeta.";
+                checkoutError.classList.remove("d-none");
+                return;
+            }
+
+            // Revisa que la fecha de vencimiento no esté vencida (formato MM/AA)
+            const [mesIngresado, anioIngresado] = vencimientoIngresado.split("/").map(Number);
+            const fechaActual = new Date();
+            const anioActual = Number(String(fechaActual.getFullYear()).slice(2)); // ej: 2026 -> 26
+            const mesActual = fechaActual.getMonth() + 1;
+
+            const estaVencida =
+                mesIngresado < 1 || mesIngresado > 12 ||
+                anioIngresado < anioActual ||
+                (anioIngresado === anioActual && mesIngresado < mesActual);
+
+            if (estaVencida) {
+                checkoutError.textContent = "La tarjeta está vencida. Verifica la fecha ingresada.";
+                checkoutError.classList.remove("d-none");
+                return;
+            }
+
+            if (numeroIngresado !== NUMERO_TARJETA_VALIDO || vencimientoIngresado !== VENCIMIENTO_VALIDO || cvvIngresado !== CVV_VALIDO) {
+                checkoutError.textContent = "Pago rechazado. Verifica tu saldo o comunícate con tu banco.";
+                checkoutError.classList.remove("d-none");
+                return;
+            }
+        }
 
         checkoutError.classList.add("d-none");
 
-        // Simulación: en un backend real, aquí se enviaría el pedido al servidor.
-        alert("¡Pedido confirmado! Quedó registrado con estado 'en preparación'.");
+        // ---- Armar y guardar el pedido ----
+        const sesionGuardada = JSON.parse(localStorage.getItem("sonidoVivoSesion"));
+        const carritoActual = obtenerCarrito();
+        const subtotalPedido = calcularSubtotal();
+        const descuentoPedido = cuponAplicado ? subtotalPedido * PORCENTAJE_DESCUENTO : 0;
+        const totalPedido = subtotalPedido - descuentoPedido;
+
+        const productosPedido = carritoActual.map(item => {
+            const producto = productos.find(p => p.id === item.id);
+            return {
+                id: producto.id,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                cantidad: item.cantidad
+            };
+        });
+
+        // Estado de pago según el método elegido
+        let estadoPago = "pendiente de pago";
+        let estadoPedido = "pendiente de pago";
+
+        if (pagoElegido === "tarjeta") {
+            estadoPago = "pagado";
+            estadoPedido = "en preparación";
+        } else if (pagoElegido === "tienda") {
+            estadoPago = "pendiente (paga al retirar)";
+            estadoPedido = "en preparación";
+        }
+        // Si es transferencia, se queda como "pendiente de pago" hasta que el vendedor lo confirme.
+
+        const nuevoPedido = {
+            id: Date.now(),
+            fecha: new Date().toISOString(),
+            clienteEmail: sesionGuardada.email,
+            productos: productosPedido,
+            subtotal: subtotalPedido,
+            descuento: descuentoPedido,
+            total: totalPedido,
+            entrega: entregaElegida,
+            direccion: entregaElegida === "despacho" ? document.querySelector("#direccion").value.trim() : null,
+            metodoPago: pagoElegido,
+            estadoPago: estadoPago,
+            estado: estadoPedido
+        };
+
+        const pedidos = JSON.parse(localStorage.getItem("sonidoVivoPedidos")) || [];
+        pedidos.push(nuevoPedido);
+        localStorage.setItem("sonidoVivoPedidos", JSON.stringify(pedidos));
+
+        alert(`¡Pedido confirmado! Estado: ${estadoPedido}.`);
 
         localStorage.removeItem("sonidoVivoCarrito");
         window.location.href = "index.html";
