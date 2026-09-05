@@ -124,6 +124,8 @@
                         <label class="form-check-label" for="pagoTarjeta">Tarjeta de crédito/débito (Webpay)</label>
                     </div>
 
+                    <!-- este bloque solo aparece si eliges tarjeta, lo maneja
+                         actualizarSegunPago() en checkout.js -->
                     <div id="bloqueTarjeta" class="seccion-card mt-3 mb-3 d-none">
                         <div class="mb-3">
                             <label for="numeroTarjeta" class="form-label small">Número de tarjeta</label>
@@ -198,11 +200,11 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col md-6">
+                <div class="col-md-6">
                     <h5>SonidoVivo</h5>
                     <p>Guitarras, Baterias, Amplificadores</p>
                 </div>
-                <div class="col md-6 text-md-end">
+                <div class="col-md-6 text-md-end">
                     <h5>Contacto</h5>
                     <p class="mb-0">SonidoVivo@gmail.com</p>
                     <p>Viña del Mar, Chile</p>
@@ -218,8 +220,11 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <!-- IMPORTANTE: el orden importa. productos.js primero, luego carrito.js, luego app.js -->
+    <!-- IMPORTANTE: el orden importa. productos.js primero (catálogo base), luego
+         productosAdmin.js (combina con lo que agregó/editó el admin), luego carrito.js
+         (para leer qué hay en el carrito), luego checkout.js (usa todo lo anterior) -->
     <script src="../js/productos.js"></script>
+    <script src="../js/productosAdmin.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="../js/checkout.js"></script>
 

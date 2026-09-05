@@ -18,6 +18,8 @@
 
 <body>
     <!--Barra de Navegacion-->
+    <!-- ojo: navbar-custom no es de Bootstrap, la definimos nosotros en estilos.css
+         y usa la variable --oscuro (esta en :root) para el color de fondo -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Sonido Vivo</a>
@@ -38,6 +40,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-lg-auto align-items-lg-center">
+                    <!-- el numerito del carrito arranca oculto (d-none) y carrito.js
+                         lo va mostrando/actualizando solo cuando hay algo agregado -->
                     <li class="nav-item mt-2 mt-lg-0 me-lg-3">
                         <a class="nav-link text-white position-relative" href="carrito.html" id="iconoCarrito">
                             🛒
@@ -48,6 +52,8 @@
                         </a>
                     </li>
                     <!-- Estado: invitado (sin sesión) -->
+                    <!-- estos dos bloques (navInvitado / navUsuario) nunca se muestran juntos,
+                         auth.js decide cual ocultar segun si hay sesion guardada en localStorage -->
                     <li class="nav-item mt-2 mt-lg-0" id="navInvitado">
                         <a class="btn btn-outline-light btn-sm rounded-pill px-3 me-lg-2" href="login.html">Iniciar
                             sesión</a>
@@ -107,6 +113,8 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">Guitarras</h5>
                                 <p class="card-text">Eléctricas y acústicas para todo nivel.</p>
+                                <!-- el #guitarras no filtra nada, en productos.html el filtro real
+                                     es un select manejado por JS. Lo dejamos así por ahora, se explica en la demo -->
                                 <a href="productos.html#guitarras" class="btn btn-accent">Ver más</a>
                             </div>
                         </div>
@@ -158,6 +166,7 @@
         </div>
     </footer>
 
+    <!-- botón de WhatsApp, único elemento del sitio con estilos inline -->
     <a href="https://wa.me/56912345678?text=Hola,%20quiero%20consultar%20por%20un%20producto" target="_blank"
         class="btn btn-success rounded-circle shadow"
         style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; z-index: 1000;">

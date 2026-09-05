@@ -77,6 +77,8 @@
     <!--CONTENIDO PRINCIPAL-->
     <main class="auth-bg">
         <div class="auth-card">
+            <!-- este aviso arranca oculto, auth.js lo muestra solo si venimos
+                 redirigidos desde el carrito/checkout sin sesion -->
             <div id="avisoLogin" class="alert alert-warning py-2 small d-none" role="alert">
                 Debes iniciar sesión o registrarte para continuar con tu pedido.
             </div>
@@ -93,6 +95,8 @@
                     <input type="password" class="form-control" id="password" required>
                 </div>
 
+                <!-- este checkbox no tiene logica en auth.js todavia,
+                     por ahora es solo visual -->
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="recordarme">
                     <label class="form-check-label" for="recordarme">Recordarme</label>
@@ -114,11 +118,11 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col md-6">
+                <div class="col-md-6">
                     <h5>SonidoVivo</h5>
                     <p>Guitarras, Baterias, Amplificadores</p>
                 </div>
-                <div class="col md-6 text-md-end">
+                <div class="col-md-6 text-md-end">
                     <h5>Contacto</h5>
                     <p class="mb-0">SonidoVivo@gmail.com</p>
                     <p>Viña del Mar, Chile</p>

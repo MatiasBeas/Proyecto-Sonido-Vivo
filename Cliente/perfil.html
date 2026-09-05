@@ -39,7 +39,7 @@
                 </ul>
                 <ul class="navbar-nav ms-lg-auto align-items-lg-center">
                     <li class="nav-item mt-2 mt-lg-0 me-lg-3">
-                        <a class="nav-link text-white position-relative" href="#" id="iconoCarrito">
+                        <a class="nav-link text-white position-relative" href="carrito.html" id="iconoCarrito">
                             🛒
                             <span id="contadorCarrito" class="badge rounded-pill d-none"
                                 style="position: absolute; top: 0; right: -8px; background-color: var(--acento); font-size: 0.65rem;">
@@ -128,11 +128,11 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col md-6">
+                <div class="col-md-6">
                     <h5>SonidoVivo</h5>
                     <p>Guitarras, Baterias, Amplificadores</p>
                 </div>
-                <div class="col md-6 text-md-end">
+                <div class="col-md-6 text-md-end">
                     <h5>Contacto</h5>
                     <p class="mb-0">SonidoVivo@gmail.com</p>
                     <p>Viña del Mar, Chile</p>
@@ -146,6 +146,8 @@
     <script src="../js/carrito.js"></script>
     <script src="../js/perfil.js"></script>
     <script src="../js/auth.js"></script>
+    <!-- proteccion.js define protegerPagina(), pero no se ejecuta solo:
+         necesita el <script> de abajo que la llama explícitamente -->
     <script src="../js/proteccion.js"></script>
     <script>
         protegerPagina("cliente", false);

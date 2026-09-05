@@ -92,6 +92,16 @@ if (formRegistro) {
             return;
         }
 
+        const tieneMayuscula = /[A-Z]/.test(password);
+        const tieneMinuscula = /[a-z]/.test(password);
+        const tieneNumero = /[0-9]/.test(password);
+
+        if (!tieneMayuscula || !tieneMinuscula || !tieneNumero) {
+            registroError.textContent = "La contraseña debe incluir mayúscula, minúscula y número.";
+            registroError.classList.remove("d-none");
+            return;
+        }
+
         if (password !== confirmPassword) {
             registroError.textContent = "Las contraseñas no coinciden.";
             registroError.classList.remove("d-none");

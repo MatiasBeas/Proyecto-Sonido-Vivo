@@ -43,6 +43,16 @@ if (formPerfil) {
                 return;
             }
 
+            const tieneMayuscula = /[A-Z]/.test(passwordNueva);
+            const tieneMinuscula = /[a-z]/.test(passwordNueva);
+            const tieneNumero = /[0-9]/.test(passwordNueva);
+
+            if (!tieneMayuscula || !tieneMinuscula || !tieneNumero) {
+                perfilError.textContent = "La contraseña debe incluir mayúscula, minúscula y número.";
+                perfilError.classList.remove("d-none");
+                return;
+            }
+
             if (passwordNueva !== passwordConfirmar) {
                 perfilError.textContent = "Las contraseñas no coinciden.";
                 perfilError.classList.remove("d-none");

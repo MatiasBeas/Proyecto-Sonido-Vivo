@@ -37,7 +37,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-lg-auto align-items-lg-center">
-                    <!-- Estado: invitado (sin sesión) -->
                     <li class="nav-item mt-2 mt-lg-0 me-lg-3">
                         <a class="nav-link text-white position-relative" href="carrito.html" id="iconoCarrito">
                             🛒
@@ -47,6 +46,7 @@
                             </span>
                         </a>
                     </li>
+                    <!-- Estado: invitado (sin sesión) -->
                     <li class="nav-item mt-2 mt-lg-0" id="navInvitado">
                         <a class="btn btn-outline-light btn-sm rounded-pill px-3 me-lg-2" href="login.html">Iniciar
                             sesión</a>
@@ -74,6 +74,9 @@
 
     <!--CONTENIDO PRINCIPAL-->
     <main>
+        <!-- page-header es nuestra clase (el banner oscuro), la misma que usamos
+             en vendedor.html por ejemplo, para que todas las paginas internas
+             se vean parejas en vez de cada una con su propio estilo de titulo -->
         <div class="page-header">
             <div class="container">
                 <h1 class="h3">Contacto</h1>
@@ -83,7 +86,8 @@
 
         <div class="container pb-5">
             <div class="row g-4">
-                <div class="mt-4 seccion-card">
+                <!-- col-12 para que el mapa ocupe todo el ancho, arriba de las otras 2 columnas -->
+                <div class="col-12 mt-4 seccion-card">
                     <h5 class="mb-3">Encuéntranos</h5>
                     <div class="ratio ratio-16x9">
                         <!--Ubicacion Inventada xd -->
@@ -133,16 +137,17 @@
                     </form>
                 </div>
             </div>
+        </div>
     </main>
     <!--Pie de pagina-->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col md-6">
+                <div class="col-md-6">
                     <h5>SonidoVivo</h5>
                     <p>Guitarras, Baterias, Amplificadores</p>
                 </div>
-                <div class="col md-6 text-md-end">
+                <div class="col-md-6 text-md-end">
                     <h5>Contacto</h5>
                     <p class="mb-0">SonidoVivo@gmail.com</p>
                     <p>Viña del Mar, Chile</p>

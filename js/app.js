@@ -62,7 +62,7 @@ const inputBuscar = document.querySelector("#buscarProducto");
 
 if (selectCategoria) {
     // arma las opciones del <select> automáticamente a partir del catálogo
-    const categorias = [...new Set(productos.map(p => p.categoria))];
+    const categorias = [...new Set(obtenerCatalogoCompleto().map(p => p.categoria))];
     categorias.forEach(cat => {
         const opcion = document.createElement("option");
         opcion.value = cat;
@@ -75,7 +75,7 @@ function aplicarFiltros() {
     const categoriaElegida = selectCategoria ? selectCategoria.value : "todos";
     const texto = inputBuscar ? inputBuscar.value.trim().toLowerCase() : "";
 
-    const resultado = productos.filter(p => {
+    const resultado = obtenerCatalogoCompleto().filter(p => {
         const coincideCategoria = categoriaElegida === "todos" || p.categoria === categoriaElegida;
         const coincideTexto =
             texto === "" ||
@@ -96,4 +96,4 @@ if (inputBuscar) {
 }
 
 // Primer render al cargar la página
-renderProductos(productos);
+renderProductos(obtenerCatalogoCompleto());
